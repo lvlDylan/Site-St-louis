@@ -859,6 +859,25 @@ class App {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const refuseBtn = document.getElementById("decline-cookies");
+
+    // Vérifie si un choix a déjà été fait
+    if (!localStorage.getItem("cookieConsent")) {
+        banner.style.display = "block";
+    }
+
+    acceptBtn.addEventListener("click", function () {
+        banner.style.display = "none";
+    });
+
+    refuseBtn.addEventListener("click", function () {
+        banner.style.display = "none";
+    });
+});
+
 /* ============================================
    DÉMARRAGE DE L'APPLICATION
    ============================================ */
